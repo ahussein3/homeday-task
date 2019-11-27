@@ -1,0 +1,42 @@
+@import 'colors';
+@import 'variables';
+
+@mixin button {
+    background-color: transparent;
+    border: 0;
+    color: color($white);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 48px;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+}
+
+button {
+    background: transparent;
+    border: 0;
+}
+
+.u-primaryButton {
+    @include button;
+    background-color: $tertiary-color;
+    border-radius: 3px;
+}
+
+.u-secondaryButton {
+    @include button;
+    background-color: color($white);
+    color: color($grey, 400);
+    border-radius: 3px;
+}
+
+a {
+    color: $secondary-color;
+}
