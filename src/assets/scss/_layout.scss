@@ -1,53 +1,31 @@
+@import 'variables';
 
-.u-layout-horizontal,
-.u-layout-vertical,
-.u-layout-auto-vertical,
-.u-layout-centered,
-.u-layout-wrap { display: flex; }
-
-.u-layout-horizontal,
-.u-layout-auto-vertical,
-.u-layout-wrap { flex-direction: row; }
-
-.u-layout-vertical { flex-direction: column; }
-
-.u-layout-wrap { flex-wrap: wrap; }
-
-.u-layout-centered {
+.box-container {
+    height: 100vh;
+    display: flex;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(to bottom,
+            rgba(234, 88, 4, 1) 0%,
+            rgba(234, 40, 3, 1) 51%,
+            rgba(234, 88, 4, 1) 100%);
+}
+
+.form-wizard,
+.profile-card {
+    padding: 25px;
+    background: $white;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 6px 3px #777;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: $gray;
+    line-height: 30px;
     text-align: center;
+    margin: auto;
+    max-width: 500px;
+    margin: 5px;
 }
-
-.u-flex,
-[class*="u-flex-"] {
-    flex: 1;
-    flex-basis: 0.000000001px;
-}
-
-.u-layout-vertical > .u-flex.u-layout-auto-vertical,
-.u-layout-vertical > [class*="u-flex-"].u-layout-auto-vertical,
-.u-layout-vertical::shadow .u-flex.u-layout-auto-vertical,
-.u-layout-vertical::shadow [class*="u-flex-"].u-layout-auto-vertical {
-    flex-basis: auto;
-}
-
-.u-flex-auto { flex-basis: auto; }
-.u-flex-none { flex: none; }
-.u-flex-1 { flex: 1; }
-.u-flex-2 { flex: 2; }
-.u-flex-3 { flex: 3; }
-.u-flex-4 { flex: 4; }
-
-@media (max-width: 767px) {
-    .u-layout-auto-vertical {
-        flex-direction: column;
-
-        > * { flex-basis: auto; }
-    }
-}
-
-// Text
-.u-left { text-align: left; }
-.u-right { text-align: right; }
-.u-center { text-align: center; }

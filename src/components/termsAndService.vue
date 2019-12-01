@@ -17,6 +17,7 @@
           placeholder="email"
           class="form-control"
           v-validate="'required|email'"
+          :class="{ 'input-error': errors.has('email') }"
         />
         <span class="messege-error">{{ errors.first("email") }}</span>
       </div>
@@ -55,7 +56,10 @@ export default {
     validateBeforeSubmit() {
       this.$validator.validateAll().then(() => {
         if (!this.errors.any()) {
-          this.nextStep();
+          this.$router.push({
+            name: "user-profile",
+            params: { userName: `${this.userData.githubUserName}` }
+          });
         }
       });
     },

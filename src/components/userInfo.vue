@@ -100,12 +100,13 @@ export default {
     },
     checkGithubAccountValidation(userName) {
       this.errorMessage = "";
-      fetchGithubUser(userName)
+      const config = { stopErrorHandle: true };
+      fetchGithubUser(userName, config)
         .then(response => {
           this.$store.dispatch("setUserProfile", response);
           this.nextStep();
         })
-        .catch(({ response: { status } }) => {
+        .catch(({ status }) => {
           if (status === 404)
             this.errorMessage = `There is no Github account found associated with this username please try another one`;
         });

@@ -1,4 +1,5 @@
 import httpService from "./../utils/http.service";
+import { UserProfileModel } from "./user.model";
 
 /**
  * fetch Github profile
@@ -6,11 +7,11 @@ import httpService from "./../utils/http.service";
  * @param {UserName} user
  * @return {Promise}
  */
-function fetchGithubUser(user) {
+function fetchGithubUser(user, config) {
   return httpService
-    .get(`${process.env.VUE_APP_API_GITHUB_URL}/${user}`)
+    .get(`${process.env.VUE_APP_API_GITHUB_URL}/${user}`, config)
     .then(({ data }) => {
-      return data;
+      return new UserProfileModel(data);
     });
 }
 

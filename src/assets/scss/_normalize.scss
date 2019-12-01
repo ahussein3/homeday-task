@@ -1,10 +1,5 @@
-@import 'colors';
-
-// Project specific
-
 html,
 body {
-    color: color($blue-grey, 800);
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -13,13 +8,6 @@ body {
     strong {
         font-weight: 600;
     }
-}
-
-html,
-body,
-body>div,
-.Layout {
-    height: 100%;
 }
 
 // General normalization
@@ -37,10 +25,6 @@ body>div,
     outline: none;
 }
 
-* {
-    -webkit-tap-highlight-color: rgba(color($black), 0);
-}
-
 a {
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
@@ -49,10 +33,6 @@ a {
 
 img {
     border-style: none;
-}
-
-input::placeholder {
-    color: color($grey, 500);
 }
 
 svg:not(:root) {

@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import { fetchGithubUser } from "@/service/user.service";
 
 Vue.use(Vuex);
 
@@ -9,6 +10,15 @@ export default new Vuex.Store({
   },
 
   actions: {
+    getUserProfile({ commit }, userName, config = {}) {
+      fetchGithubUser(userName, config)
+        .then(response => {
+          commit("setUserProfileToStore", response);
+        })
+        .catch(error => {
+          return error;
+        });
+    },
     setUserProfile({ commit }, userData) {
       commit("setUserProfileToStore", userData);
     }
