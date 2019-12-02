@@ -5,17 +5,7 @@ export const httpService = axios.create({
   baseURL: "",
   timeout: 120000,
   headers: {}
-  // config: {
-  //   stopErrorHandle: false
-  // }
 });
-
-// httpService.interceptors.request.use(
-//   config => {
-//     return config;
-//   },
-//   error => Promise.reject(error)
-// );
 
 httpService.interceptors.response.use(
   response => response,

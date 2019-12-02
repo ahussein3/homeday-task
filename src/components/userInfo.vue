@@ -52,12 +52,12 @@
           :class="{ 'input-error': errors.has('Github Username') }"
           @input="resetErrorMessage"
         />
-        <span class="d-block messege-error">{{
-          errors.first("Github Username")
-        }}</span>
-        <span v-if="errorMessage" class="d-block messege-error">{{
-          errorMessage
-        }}</span>
+        <span class="d-block messege-error">
+          {{ errors.first("Github Username") }}
+        </span>
+        <span v-if="errorMessage" class="d-block messege-error">
+          {{ errorMessage }}
+        </span>
       </div>
     </fieldset>
     <div class="form-wizard-buttons">
@@ -100,7 +100,7 @@ export default {
     },
     checkGithubAccountValidation(userName) {
       this.errorMessage = "";
-      const config = { stopErrorHandle: true };
+      const config = { stopErrorHandle: "true" };
       fetchGithubUser(userName, config)
         .then(response => {
           this.$store.dispatch("setUserProfile", response);

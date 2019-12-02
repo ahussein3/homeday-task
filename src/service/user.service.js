@@ -9,7 +9,9 @@ import { UserProfileModel } from "./user.model";
  */
 function fetchGithubUser(user, config) {
   return httpService
-    .get(`${process.env.VUE_APP_API_GITHUB_URL}/${user}`, config)
+    .get(`${process.env.VUE_APP_API_GITHUB_URL}/${user}`, {
+      ...config
+    })
     .then(({ data }) => {
       return new UserProfileModel(data);
     });
