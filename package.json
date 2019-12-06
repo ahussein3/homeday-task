@@ -10,7 +10,7 @@
     "svg": "vsvg -s ./src/assets/SVG -t ./src/assets/svg-js"
   },
   "dependencies": {
-    "axios": "0.18.0",
+    "axios": "0.18.1",
     "core-js": "^3.3.2",
     "element-ui": "^2.13.0",
     "lodash-es": "^4.17.15",
